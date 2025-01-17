@@ -11,8 +11,8 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         this.setTitle("Bouncing Ball");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
         setSize(800, 800);
+        setLocationRelativeTo(null);
         add((Component) (ballDisplay = createBallDisplay()));
     }
 
