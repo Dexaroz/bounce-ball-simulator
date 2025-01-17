@@ -41,7 +41,7 @@ public class SwingBallDisplay extends JPanel implements BallDisplay {
             public void mouseReleased(MouseEvent e) {
                 if (released == null) return;
                 Coordinates coordinates = Coordinates.at(e.getX(), e.getY());
-                circle.ifPresent(c -> released.at(new Circle(c.id(), coordinates.x, coordinates.y, c.r())));
+                circle.ifPresent(c -> released.at(new Circle(c.id(), coordinates.x, coordinates.y, c.r(), c.color())));
             }
 
             @Override
@@ -58,7 +58,7 @@ public class SwingBallDisplay extends JPanel implements BallDisplay {
             public void mouseDragged(MouseEvent e) {
                 if (circle.isEmpty())return;
                 Coordinates coordinates = Coordinates.at(e.getX(), e.getY());
-                circle.ifPresent(c -> {grabbed.at(new Circle(c.id(), coordinates.x, coordinates.y, c.r()));
+                circle.ifPresent(c -> {grabbed.at(new Circle(c.id(), coordinates.x, coordinates.y, c.r(), c.color()));
                 });
             }
 
@@ -104,7 +104,7 @@ public class SwingBallDisplay extends JPanel implements BallDisplay {
     }
 
     private void draw(Graphics graphics, Circle c) {
-        graphics.setColor(Color.red);
+        graphics.setColor(c.color());
         graphics.fillOval(Coordinates.width /2 + c.x() - c.r(), Coordinates.height - c.y() - c.r(), c.r()*2,c.r()*2);
     }
 

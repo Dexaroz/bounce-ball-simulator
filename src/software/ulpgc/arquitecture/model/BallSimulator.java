@@ -15,7 +15,8 @@ public class BallSimulator {
                 newHeightOf(ball),
                 newVelocityOf(ball),
                 ball.g(),
-                ball.cr()
+                ball.cr(),
+                ball.color()
         );
     }
 

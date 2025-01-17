@@ -42,7 +42,8 @@ public class BallPresenter {
                 toMeters(c.y()),
                 0,
                 ball.g(),
-                ball.cr());
+                ball.cr(),
+                ball.color());
     }
 
     private Ball findBall(String id) {
@@ -84,7 +85,7 @@ public class BallPresenter {
 
     private final static double PixelsPerMeter = 5 / 0.2;
     private Circle map(Ball b) {
-        return new Circle(b.id(), toPixels(b.x()), toPixels(b.h()), toPixels(b.r())) ;
+        return new Circle(b.id(), toPixels(b.x()), toPixels(b.h()), toPixels(b.r()), b.color()) ;
     }
 
     private static int toPixels(double b) {

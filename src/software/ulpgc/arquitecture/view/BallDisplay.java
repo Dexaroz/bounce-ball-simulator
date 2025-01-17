@@ -1,5 +1,6 @@
 package software.ulpgc.arquitecture.view;
 
+import java.awt.*;
 import java.util.List;
 
 public interface BallDisplay {
@@ -7,7 +8,7 @@ public interface BallDisplay {
     void on(Grabbed grabbed);
     void off(Released released);
 
-    record Circle(String id,int x, int y, int r) {
+    record Circle(String id,int x, int y, int r, Color color) {
         public boolean isAt(int x, int y) {
             return Math.abs((x - this.x)) < this.r && Math.abs((y - this.y)) < this.r;
         }
