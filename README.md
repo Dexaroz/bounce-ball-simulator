@@ -13,7 +13,7 @@ La organización del proyecto se basa en una separación de responsabilidades, a
 
 ## Patrones Arquitectónicos
 
-### Modelo-Vista-Controlador (MVC)
+### Modelo-Vista-Controlador (MVP)
 La arquitectura general del proyecto sigue este enfoque, separando las responsabilidades en tres capas:
 
 - **Modelo**:
@@ -26,7 +26,7 @@ La arquitectura general del proyecto sigue este enfoque, separando las responsab
   - Proporciona componentes para mostrar las bolas y su movimiento.
   - **Ejemplo**: `MainFrame`, `BallDisplay`.
 
-- **Controlador**:
+- **Presentador**:
   - Media entre el modelo y la vista, actuando como coordinador.
   - Gestiona eventos de usuario, actualiza el modelo y notifica a la vista.
   - **Ejemplo**: `BallPresenter`.
